@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dolphin Junior Academy</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      background: #e4f6fb;
+    }
+    header {
+      background: #0099cc;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem 1rem 1rem;
+    }
+    .logo {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #fff;
+      margin-bottom: 0.5rem;
+      box-shadow: 0 2px 8px #008bcc44;
+      border: 2px solid #fff;
+    }
+    nav {
+      background: #0077aa;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0.5rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.25rem 1rem;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    nav a:hover {
+      background: #00b7ee;
+    }
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px #00b7ee22;
+      padding: 2rem;
+    }
+    h2 {
+      color: #0099cc;
+      margin-top: 0;
+    }
+    .mission {
+      font-size: 1.2rem;
+      color: #444;
+    }
+    .gallery-container {
+      text-align: center;
+    }
+    .gallery-img {
+      width: 80%;
+      max-width: 400px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px #00b7ee44;
+      margin-bottom: 0.5rem;
+    }
+    .gallery-controls {
+      margin: 0.5rem 0;
+    }
+    .gallery-controls button {
+      background: #0099cc;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      margin: 0 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    .gallery-controls button:hover {
+      background: #00b7ee;
+    }
+    .contacts {
+      line-height: 1.7;
+      font-size: 1.1rem;
+    }
+    .map-container {
+      width: 100%;
+      height: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px #00b7ee33;
+      margin-top: 1rem;
+    }
+    @media (max-width: 600px) {
+      section {
+        padding: 1rem;
+      }
+      .gallery-img {
+        width: 100%;
+        height: 150px;
+      }
+      .map-container {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Dolphin_icon.png" alt="Dolphin Junior Academy Logo" class="logo">
+    <h1>Dolphin Junior Academy</h1>
+    <p>Where Little Minds Make Big Waves</p>
+  </header>
+  <nav>
+    <a href="#mission">Mission</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contacts">Contacts</a>
+    <a href="#location">Location</a>
+  </nav>
+
+  <section id="mission">
+    <h2>Our Mission</h2>
+    <p class="mission">
+      At Dolphin Junior Academy, we nurture young minds to explore, learn, and grow in a safe and joyful environment. 
+      Our mission is to inspire creativity, kindness, and a lifelong love for learning through playful discovery and caring guidance.
+    </p>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-container">
+      <img id="galleryImg" class="gallery-img" src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=800&q=80" alt="Preschool Gallery">
+      <div class="gallery-controls">
+        <button onclick="prevImg()">&#8678; Prev</button>
+        <button onclick="nextImg()">Next &#8680;</button>
+      </div>
+      <div id="galleryCaption"></div>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <h2>Contact Us</h2>
+    <div class="contacts">
+      <strong>Address:</strong> 4188 Mkoba 17 Gweru , Country<br>
+      <strong>Phone:</strong>+263 78 247 1890/+263 78 480 
+
+     <strong>Email:</strong> info@dolphinjunioracademy.com<br>
+      <strong>Hours:</strong> Monday - Friday, 8:00 AM - 4:00 PM
+    </div>
+  </section>
+
+  <section id="location">
+    <h2>Our Location</h2>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps?q=Central+Park+New+York&output=embed"
+        width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""
+        aria-hidden="false" tabindex="0"></iframe>
+    </div>
+  </section>
+
+  <script>
+    const gallery = [
+      {
+        src: "https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=800&q=80",
+        caption: "Bright and cheerful classrooms."
+      },
+      {
+        src: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80",
+        caption: "Outdoor playtime for curious minds."
+      },
+      {
+        src: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=80",
+        caption: "Arts and crafts for creative expression."
+      },
+      {
+        src: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80",
+        caption: "Group activities and teamwork."
+      }
+    ];
+    let current = 0;
+    function showImg(idx) {
+      const img = document.getElementById('galleryImg');
+      const cap = document.getElementById('galleryCaption');
+      img.src = gallery[idx].src;
+      cap.textContent = gallery[idx].caption;
+    }
+    function prevImg() {
+      current = (current - 1 + gallery.length) % gallery.length;
+      showImg(current);
+    }
+    function nextImg() {
+      current = (current + 1) % gallery.length;
+      showImg(current);
+    }
+    // Initialize
+    showImg(0);
+  </script>
+</body>
+</html>
